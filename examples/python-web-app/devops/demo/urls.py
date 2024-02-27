@@ -1,7 +1,7 @@
-from django.urls import path
-
-from . import views
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', include('demo.urls')),  # Add this line for the root path
+    path('admin/', admin.site.urls),
+    path('demo/', include('demo.urls')),
 ]
